@@ -1,0 +1,18 @@
+ktor:
+  application:
+    modules:
+      - com.positionservice.ApplicationKt.module
+  deployment:
+    port: 8080
+
+database:
+  url: "jdbc:postgresql://localhost:5432/position_service"
+  user: "position"
+  password: "position123"
+  maxPoolSize: 20
+
+kafka:
+  bootstrapServers: "localhost:9092"
+  consumerGroup: "position-service"
+  tradeEventsTopic: "trade-events"
+  calcRequestsTopic: "position-calculation-requests"
